@@ -1,6 +1,16 @@
 pipeline {
     agent any
 
+    options {
+        timestamps()
+        timeout(time: 1, unit: 'HOURS')
+    }
+
+    triggers {
+        githubPush() // Automated build trigger on GitHub Push event
+        pollSCM('H/5 * * * *') // Fallback polling every 5 minutes
+    }
+
     stages {
         stage('Clone Repository') {
             steps {
