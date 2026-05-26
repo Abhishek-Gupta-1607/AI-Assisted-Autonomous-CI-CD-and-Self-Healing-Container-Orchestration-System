@@ -1,6 +1,19 @@
 version: '3.8'
 
 services:
+  frontend-service:
+    build: ./frontend-service
+    container_name: frontend-service
+    ports:
+      - "80:80"
+    depends_on:
+      - user-service
+      - product-service
+      - order-service
+      - deployment-monitor-service
+    networks:
+      - devops-network
+
   mysql:
     image: mysql:8.0
     container_name: mysql

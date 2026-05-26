@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous DevOps Platform</title>
+    <!-- Use Google Fonts (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="app-container">
+        <header class="glass-header">
+            <h1>Autonomous DevOps Platform</h1>
+            <p>Self-Healing Container Orchestration & AI Risk Analysis</p>
+        </header>
+
+        <main class="dashboard-grid">
+            
+            <!-- AI Monitor Section -->
+            <section class="card ai-card glass-panel col-span-2">
+                <div class="card-header">
+                    <h2>🧠 AI Deployment Monitor</h2>
+                    <span class="badge" id="ai-status-badge">Awaiting Test</span>
+                </div>
+                <div class="ai-content">
+                    <p class="description">Test the AI engine by simulating a deployment payload.</p>
+                    <div class="ai-controls">
+                        <button class="btn btn-primary" onclick="simulateAI('healthy')">Simulate Healthy Payload</button>
+                        <button class="btn btn-danger" onclick="simulateAI('risky')">Simulate Risky Payload</button>
+                    </div>
+                    <div class="ai-results hidden" id="ai-results">
+                        <div class="result-box">
+                            <h4>Risk Score</h4>
+                            <p id="ai-risk-score" class="score">0%</p>
+                        </div>
+                        <div class="result-box">
+                            <h4>Confidence</h4>
+                            <p id="ai-confidence-score" class="score">0%</p>
+                        </div>
+                        <div class="result-box">
+                            <h4>Action</h4>
+                            <p id="ai-action" class="action-text">-</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Microservices Row -->
+            <div class="microservices-row col-span-2">
+                <!-- User Service -->
+                <section class="card glass-panel">
+                    <h2>👤 User Service</h2>
+                    <form id="user-form" onsubmit="createUser(event)">
+                        <input type="text" id="user-name" placeholder="Name" required>
+                        <input type="email" id="user-email" placeholder="Email" required>
+                        <button type="submit" class="btn btn-secondary">Add User</button>
+                    </form>
+                    <div class="data-list">
+                        <h3>Active Users</h3>
+                        <ul id="user-list"></ul>
+                    </div>
+                </section>
+
+                <!-- Product Service -->
+                <section class="card glass-panel">
+                    <h2>📦 Product Service</h2>
+                    <form id="product-form" onsubmit="createProduct(event)">
+                        <input type="text" id="product-name" placeholder="Product Name" required>
+                        <input type="number" id="product-price" placeholder="Price ($)" step="0.01" required>
+                        <button type="submit" class="btn btn-secondary">Add Product</button>
+                    </form>
+                    <div class="data-list">
+                        <h3>Inventory</h3>
+                        <ul id="product-list"></ul>
+                    </div>
+                </section>
+
+                <!-- Order Service -->
+                <section class="card glass-panel">
+                    <h2>🛒 Order Service</h2>
+                    <form id="order-form" onsubmit="createOrder(event)">
+                        <input type="number" id="order-user-id" placeholder="User ID" required>
+                        <input type="number" id="order-product-id" placeholder="Product ID" required>
+                        <input type="number" id="order-quantity" placeholder="Quantity" required>
+                        <button type="submit" class="btn btn-secondary">Place Order</button>
+                    </form>
+                    <div class="data-list">
+                        <h3>Recent Orders</h3>
+                        <ul id="order-list"></ul>
+                    </div>
+                </section>
+            </div>
+            
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
