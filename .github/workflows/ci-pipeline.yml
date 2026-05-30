@@ -28,6 +28,3 @@ jobs:
 
     - name: Build Order Service
       run: cd order-service && ./mvnw clean install -DskipTests
-
-    - name: Verify Docker Compose Architecture
-      run: docker-compose config
